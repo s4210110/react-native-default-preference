@@ -1,86 +1,19 @@
-[![npm version](https://badge.fury.io/js/react-native-default-preference.svg)](https://badge.fury.io/js/react-native-default-preference)
+# @react-native-oh-tpl/react-native-default-preference
 
-# react-native-default-preference
+本项目基于 [react-native-default-preference ](https://github.com/kevinresol/react-native-default-preference)
 
+## 文档地址 / Documentation URL 
 
-Use `SharedPreferences` (Android) and `UserDefaults` (iOS) with React Native over a unified interface.
-All data is stored as a string. If you need to support more complex data structures, use serialization/deserialization (e.g. JSON).
+[中文 / Chinese](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-cn/react-native-default-preference.md)
 
-## Getting started
+[英文 / English](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-en/react-native-default-preference.md)
 
-`$ npm install react-native-default-preference --save`
+## Codegen
 
-### React Native >= 0.60
+该库已接入 codegen，具体请查阅文档。
 
-`$ cd ios && pod install`
+The library has been integrated with codegen. Please refer to the documentation for details.
 
-### React Native <= 0.59
+## 请悉知 / Acknowledgements
 
-`$ react-native link react-native-default-preference`
-
-### Manual installation
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-default-preference` and add `RNDefaultPreference.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNDefaultPreference.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import com.kevinresol.react_native_default_preference.RNDefaultPreferencePackage;` to the imports at the top of the file
-  - Add `new RNDefaultPreferencePackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-default-preference'
-  	project(':react-native-default-preference').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-default-preference/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-default-preference')
-  	```
-
-## Usage
-```javascript
-import DefaultPreference from 'react-native-default-preference';
-
-DefaultPreference.get('my key').then(function(value) {console.log(value)});
-DefaultPreference.set('my key', 'my value').then(function() {console.log('done')});
-```
-
-## API
-
-```typescript
-function get(key: string): Promise<string | undefined | null>;
-function set(key: string, value: string): Promise<void>;
-function clear(key: string): Promise<void>;
-function getMultiple(keys: string[]): Promise<string[]>;
-function setMultiple(data: {[key: string]: string}): Promise<void>;
-function clearMultiple(keys: string[]): Promise<void>;
-function getAll(): Promise<{[key: string]: string}>;
-function clearAll(): Promise<void>;
-
-/** Gets and sets the current preferences file name (android) or user default suite name (ios) **/
-function getName(): Promise<string>;
-function setName(name: string): Promise<void>;
-```
-
-## Cordova Native Storage Compatibility
-This module is compatible with cordova-plugin-native-storage.
-
-### Android
-You need to use the same SharedPreference as in the cordova plugin, to do so add
-the following line:
-
-```js
-import { Platform } from 'react-native';
-// ...
-if (Platform.OS === 'android') DefaultPreference.setName('NativeStorage');
-```
-
-### iOS
-You don't need to change the name, as cordova-plugin-native-storage uses the default
-value.
+本项目基于 [The MIT License (MIT)](https://github.com/react-native-default-preference/blob/sig/LICENSE.md) ，请自由地享受和参与开源。
