@@ -1,6 +1,6 @@
 {
-  "name": "react-native-default-preference",
-  "version": "1.4.4",
+  "name": "@react-native-oh-tpl/react-native-default-preference",
+  "version": "1.4.4-0.0.1",
   "description": "Use SharedPreference (Android) and UserDefaults (iOS) with React Native over a unified interface",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kevinresol/react-native-default-preference.git"
+    "url": "https://github.com/kevinresol/react-native-oh-library/react-native-default-preference.git"
+  },
+  "harmony": {
+    "alias": "react-native-default-preference",
+   "codegenConfig": {
+      "specPaths": [
+        "./src"
+      ]
+    }
   },
   "keywords": [
+    "harmony",
     "react-native",
     "NSUserDefaults",
     "user defaults",
