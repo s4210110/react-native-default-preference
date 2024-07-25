@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "react_native_default_preference",
+    "type": "har",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+  }
+}

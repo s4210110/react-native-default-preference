@@ -1,6 +1,12 @@
 
-import { NativeModules } from 'react-native';
+import { NativeModules,Platform  } from 'react-native';
+import preference from './src/NativeDefaultPreference'
+let RNDefaultPreference
+if (Platform.OS == 'harmony') {
+    RNDefaultPreference = preference
+}else{
+    RNDefaultPreference = NativeModules;
+}
 
-const { RNDefaultPreference } = NativeModules;
 
 export default RNDefaultPreference;
